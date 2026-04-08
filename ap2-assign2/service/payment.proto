@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "ap2-assign2/shares/payment.proto";
+import "ap2-assign2/shares/error.proto";
+
+service PaymentService {
+  rpc GetPaymentByOrderID(GetPaymentByOrderIDRequest) returns (GetPaymentByOrderIDResponse);
+  rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse);
+}
+
+message CreatePaymentRequest {
+  ap2.assign2.shares.payment.Payment payment = 1;
+}
+
+message CreatePaymentResponse {
+  ap2.assign2.shares.error.Error error = 1;
+}
+
+message GetPaymentByOrderIDRequest {
+  uint32 order_id = 1;
+}
+
+message GetPaymentByOrderIDResponse {
+  ap2.assign2.shares.payment.Payment payment = 1;
+}
+

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ap2.assign2.shares.payment;
+
+message Payment {
+  uint64 id = 1;
+  string order_id = 2;
+  string transaction_id = 3;
+  int64 amount = 4;
+  string status = 5;
+}
