@@ -24,6 +24,6 @@ message GetPaymentByOrderIDRequest {
 }
 
 message GetPaymentByOrderIDResponse {
-  ap2.assign2.shares.payment.Payment payment = 1;
+  repeated ap2.assign2.shares.payment.Payment payment = 1;
 }
 
