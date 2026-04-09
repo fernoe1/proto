@@ -12,7 +12,8 @@ service PaymentService {
 }
 
 message CreatePaymentRequest {
-  ap2.assign2.shares.payment.Payment payment = 1;
+  string order_id = 1;
+  int64 amount = 2;
 }
 
 message CreatePaymentResponse {
