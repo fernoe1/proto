@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ap2.assign2.service.order;
+
+option go_package = "github.com/fernoe1/protogen/ap2-assign2/service/order;ordersvc";
+
+service OrderService {
+  rpc SubscribeToOrderUpdates(OrderRequest) returns (stream OrderStatusUpdate);
+}
+
+message OrderRequest {
+  uint64 id = 1;
+}
+
+message OrderStatusUpdate {
+  string status = 1;
+}
