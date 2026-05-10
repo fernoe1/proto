@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package watec.service.classroom;
+
+option go_package = "github.com/fernoe1/protogen/watec/service/classroom;clsrmsvc";
+
+service ClassroomService {
+  rpc CreateData(CreateDataRequest) returns (CreateDataResponse);
+  rpc ReadData(ReadDataRequest) returns (ReadDataResponse);
+  rpc UpdateData(UpdateDataRequest) returns (UpdateDataResponse);
+  rpc DeleteData(DeleteDataRequest) returns (DeleteDataResponse);
+}
+
+message CreateDataRequest {
+  int64 roomNumber = 1;
+  repeated Free free = 2;
+}
+
+message Free {
+  int64 from = 1;
+  int64 to = 2;
+}
+
+message CreateDataResponse {
+}
+
+message ReadDataRequest {
+}
+
+message ReadDataResponse {
+  repeated int64 free = 1;
+}
+
+message UpdateDataRequest {
+  int64 roomNumber = 1;
+  repeated Free free = 2;
+}
+
+message UpdateDataResponse {
+}
+
+message DeleteDataRequest {
+  int64 roomNumber = 1;
+}
+
+message DeleteDataResponse {
+}
+
