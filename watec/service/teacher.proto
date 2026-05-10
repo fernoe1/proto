@@ -1,0 +1,52 @@
+syntax="proto3";
+
+package watec.service.teacher;
+
+option go_package = "github.com/fernoe1/protogen/watec/service/teacher;tchersvc";
+
+import "watec/shares/free.proto";
+
+service TeacherService {
+  rpc CreateData(CreateDataRequest) returns (CreateDataResponse);
+  rpc ReadData(ReadDataRequest) returns (ReadDataResponse);
+  rpc UpdateData(UpdateDataRequest) returns (UpdateDataResponse);
+  rpc DeleteData(DeleteDataRequest) returns (DeleteDataResponse);
+}
+
+message Free {
+  int64 roomNumber = 1;
+  watec.shares.free.Free free = 2;
+}
+
+message CreateDataRequest {
+  string name = 1;
+  repeated Free free = 2;
+}
+
+message CreateDataResponse {
+}
+
+message ReadDataRequest {
+  string name = 1;
+}
+
+message ReadDataResponse {
+  bool isFree = 1;
+  Free free = 2;
+}
+
+message UpdateDataRequest {
+  string name = 1;
+  repeated Free free = 2;
+}
+
+message UpdateDataResponse {
+}
+
+message DeleteDataRequest {
+  string name = 1;
+}
+
+message DeleteDataResponse {
+}
+

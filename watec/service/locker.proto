@@ -1,10 +1,10 @@
-syntax = "proto3";
+syntax="proto3";
 
-package watec.service.classroom;
+package watec.service.locker;
 
-option go_package = "github.com/fernoe1/protogen/watec/service/classroom;clsrmsvc";
+option go_package = "github.com/fernoe1/protogen/watec/service/locker;lokrsvc";
 
-service ClassroomService {
+service LockerService {
   rpc CreateData(CreateDataRequest) returns (CreateDataResponse);
   rpc ReadData(ReadDataRequest) returns (ReadDataResponse);
   rpc UpdateData(UpdateDataRequest) returns (UpdateDataResponse);
@@ -12,37 +12,39 @@ service ClassroomService {
 }
 
 message CreateDataRequest {
-  int64 roomNumber = 1;
-  repeated Free free = 2;
-}
-
-message Free {
-  int64 from = 1;
-  int64 to = 2;
+  int64 number = 1;
+  int64 blockFloor = 2;
+  // meshId is for frontend
+  int64 meshId = 3;
 }
 
 message CreateDataResponse {
 }
 
 message ReadDataRequest {
+  int64 number = 1;
 }
 
 message ReadDataResponse {
-  repeated int64 free = 1;
+  int64 number = 1;
+  int64 blockFloor = 2;
+  // meshId is for frontend
+  int64 meshId = 3;
 }
 
 message UpdateDataRequest {
-  int64 roomNumber = 1;
-  repeated Free free = 2;
+  int64 number = 1;
+  int64 blockFloor = 2;
+  // meshId is for frontend
+  int64 meshId = 3;
 }
 
 message UpdateDataResponse {
 }
 
 message DeleteDataRequest {
-  int64 roomNumber = 1;
+  int64 number = 1;
 }
 
 message DeleteDataResponse {
 }
-

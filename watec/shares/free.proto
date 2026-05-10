@@ -1,0 +1,10 @@
+syntax="proto3";
+
+package watec.shares.free;
+
+option go_package = "github.com/fernoe1/protogen/watec/shares/free;freepb";
+
+message Free {
+  int64 from = 1;
+  int64 to = 2;
+}
