@@ -7,10 +7,10 @@ option go_package = "github.com/fernoe1/protogen/watec/service/teacher;tchersvc"
 import "watec/shares/free/model.proto";
 
 service TeacherService {
-  rpc CreateData(CreateDataRequest) returns (CreateDataResponse);
-  rpc ReadData(ReadDataRequest) returns (ReadDataResponse);
-  rpc UpdateData(UpdateDataRequest) returns (UpdateDataResponse);
-  rpc DeleteData(DeleteDataRequest) returns (DeleteDataResponse);
+  rpc Create(CreateRequest) returns (CreateResponse);
+  rpc Read(ReadRequest) returns (ReadResponse);
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
 }
 
 message Free {
@@ -18,35 +18,35 @@ message Free {
   watec.shares.free.Free free = 2;
 }
 
-message CreateDataRequest {
+message CreateRequest {
   string name = 1;
   repeated Free free = 2;
 }
 
-message CreateDataResponse {
+message CreateResponse {
 }
 
-message ReadDataRequest {
+message ReadRequest {
   string name = 1;
 }
 
-message ReadDataResponse {
+message ReadResponse {
   bool isFree = 1;
   Free free = 2;
 }
 
-message UpdateDataRequest {
+message UpdateRequest {
   string name = 1;
   repeated Free free = 2;
 }
 
-message UpdateDataResponse {
+message UpdateResponse {
 }
 
-message DeleteDataRequest {
+message DeleteRequest {
   string name = 1;
 }
 
-message DeleteDataResponse {
+message DeleteResponse {
 }
 

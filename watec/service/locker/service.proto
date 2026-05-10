@@ -5,46 +5,46 @@ package watec.service.locker;
 option go_package = "github.com/fernoe1/protogen/watec/service/locker;lokrsvc";
 
 service LockerService {
-  rpc CreateData(CreateDataRequest) returns (CreateDataResponse);
-  rpc ReadData(ReadDataRequest) returns (ReadDataResponse);
-  rpc UpdateData(UpdateDataRequest) returns (UpdateDataResponse);
-  rpc DeleteData(DeleteDataRequest) returns (DeleteDataResponse);
+  rpc Create(CreateRequest) returns (CreateResponse);
+  rpc Read(ReadRequest) returns (ReadResponse);
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
 }
 
-message CreateDataRequest {
+message CreateRequest {
   int64 number = 1;
   int64 blockFloor = 2;
   // meshId is for frontend
   int64 meshId = 3;
 }
 
-message CreateDataResponse {
+message CreateResponse {
 }
 
-message ReadDataRequest {
+message ReadRequest {
   int64 number = 1;
 }
 
-message ReadDataResponse {
-  int64 number = 1;
-  int64 blockFloor = 2;
-  // meshId is for frontend
-  int64 meshId = 3;
-}
-
-message UpdateDataRequest {
+message ReadResponse {
   int64 number = 1;
   int64 blockFloor = 2;
   // meshId is for frontend
   int64 meshId = 3;
 }
 
-message UpdateDataResponse {
+message UpdateRequest {
+  int64 number = 1;
+  int64 blockFloor = 2;
+  // meshId is for frontend
+  int64 meshId = 3;
 }
 
-message DeleteDataRequest {
+message UpdateResponse {
+}
+
+message DeleteRequest {
   int64 number = 1;
 }
 
-message DeleteDataResponse {
+message DeleteResponse {
 }

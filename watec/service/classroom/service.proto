@@ -7,39 +7,39 @@ option go_package = "github.com/fernoe1/protogen/watec/service/classroom;clsrmsv
 import "watec/shares/free/model.proto";
 
 service ClassroomService {
-  rpc CreateData(CreateDataRequest) returns (CreateDataResponse);
-  rpc ReadData(ReadDataRequest) returns (ReadDataResponse);
-  rpc UpdateData(UpdateDataRequest) returns (UpdateDataResponse);
-  rpc DeleteData(DeleteDataRequest) returns (DeleteDataResponse);
+  rpc Create(CreateRequest) returns (CreateResponse);
+  rpc Read(ReadRequest) returns (ReadResponse);
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
 }
 
-message CreateDataRequest {
+message CreateRequest {
   int64 roomNumber = 1;
   repeated watec.shares.free.Free free = 2;
 }
 
-message CreateDataResponse {
+message CreateResponse {
 }
 
-message ReadDataRequest {
+message ReadRequest {
 }
 
-message ReadDataResponse {
+message ReadResponse {
   repeated int64 free = 1;
 }
 
-message UpdateDataRequest {
+message UpdateRequest {
   int64 roomNumber = 1;
   repeated watec.shares.free.Free free = 2;
 }
 
-message UpdateDataResponse {
+message UpdateResponse {
 }
 
-message DeleteDataRequest {
+message DeleteRequest {
   int64 roomNumber = 1;
 }
 
-message DeleteDataResponse {
+message DeleteResponse {
 }
 
