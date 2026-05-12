@@ -4,8 +4,6 @@ package watec.service.teacher;
 
 option go_package = "github.com/fernoe1/protogen/watec/service/teacher;tchersvc";
 
-import "watec/shares/free/model.proto";
-
 service TeacherService {
   rpc Create(CreateRequest) returns (CreateResponse);
   rpc Read(ReadRequest) returns (ReadResponse);
@@ -15,7 +13,8 @@ service TeacherService {
 
 message Free {
   int64 roomNumber = 1;
-  watec.shares.free.Free free = 2;
+  int64 from = 2;
+  int64 to = 3;
 }
 
 message CreateRequest {
