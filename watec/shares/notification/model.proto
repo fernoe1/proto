@@ -1,0 +1,9 @@
+syntax="proto3";
+
+package watec.shares.notification;
+
+option go_package = "github.com/fernoe1/protogen/watec/shares/notification;notifpb";
+
+message Notification {
+  string email = 1;
+}
